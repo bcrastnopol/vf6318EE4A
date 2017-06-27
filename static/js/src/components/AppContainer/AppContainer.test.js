@@ -3,8 +3,8 @@ import test from 'ava';
 import fetchMock from 'fetch-mock';
 import { shallow } from 'enzyme';
 import AppContainer from './AppContainer';
-import BookList from '../bookList/BookList';
-import FilterBar from '../filterBar/FilterBar';
+import BookList from '../BookList/BookList';
+import FilterBar from '../FilterBar/FilterBar';
 
 const books = [
   {

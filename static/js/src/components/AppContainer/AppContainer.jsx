@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
-import BookList from '../bookList/BookList';
-import FilterBar from '../filterBar/FilterBar';
+import BookList from '../BookList/BookList';
+import FilterBar from '../FilterBar/FilterBar';
 import {getBooks} from '../../services/api';
 
 export default class AppContainer extends Component {
