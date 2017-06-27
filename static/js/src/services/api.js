@@ -20,7 +20,7 @@ const putRating = (baseApiUrl, rating, book) => {
         rating: rating,
         book: book,
       }),
-    } 
+    }
   );
 };
 

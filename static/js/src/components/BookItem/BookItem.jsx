@@ -4,10 +4,6 @@ import RatingForm from  '../Ratings/Ratings';
 import styles from './BookItem.css';
 import { getBook } from '../../services/api';
 
-// wish the avg rating would auto update but I think it would either take
-// rerendering the entire BookList or exposing an api endpoint to this
-// component which pulls down the latest book info for each book as needed and
-// and I am a little short on time
 
 class BookItem extends React.Component {
   constructor(props) {
