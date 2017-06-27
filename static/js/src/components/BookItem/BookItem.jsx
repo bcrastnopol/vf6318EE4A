@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from '../PropTypes';
 import styles from './BookItem.css';
+import RatingForm from  '../Ratings/Ratings';
 
 const BookItem = props => {
   const {book} = props;
@@ -13,6 +14,8 @@ const BookItem = props => {
       <div className={`${styles.body}`}>
         <span className="t-book-title">{book.title}</span>
         <p className="t-book-description">{book.description}</p>
+        <p className="t-book-rating">{book.rating}</p>
+        <RatingForm book={book}/>
       </div>
     </div>
   );

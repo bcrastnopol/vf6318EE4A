@@ -1,0 +1,17 @@
+.li {
+    font-size: 12px;
+    padding-left: 3px !important;
+}
+.h4 {
+    font-weight: normal;
+    margin: 0 5px;
+}
+.ratings_box {
+    margin-bottom: 10px;
+}
+.ratings_box ul {
+    padding-left: 0;
+}
+.ratings_box input {
+    padding-left: 0px;
+}
