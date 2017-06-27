@@ -41,11 +41,6 @@ export default class AppContainer extends Component {
     this.render();
   }
 
-  togglePages(e) {
-    if ( this.state.showBooks )
-      return <BookList books={this.state.books}/>;
-    return <PublisherList publishers={this.state.publishers}/>;
-  }
 
   render() {
     return (
