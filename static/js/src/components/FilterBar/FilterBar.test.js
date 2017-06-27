@@ -15,7 +15,7 @@ test('should get nav class', t => {
 
 test('should include a filter Books', t => {
   const expected = 'Books';
-  const filter = getWrapper().find('li').at(1);
+  const filter = getWrapper().find('li').at(0);
   t.is(filter.text(), expected);
 });
 

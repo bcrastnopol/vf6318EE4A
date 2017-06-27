@@ -70,15 +70,13 @@ test('should not include a BookList if showBooks is false', t => {
   });
 });
 
-test('should get book data when mounted', t => {
+test('should get book data when mounted', async t => {
   t.plan(1);
 
   const expected = {'showBooks': true, 'books': books};
   const instance = getWrapper().instance();
-
   instance.componentWillMount();
-
-  new Promise(resolve => {
+  await new Promise(resolve => {
     setTimeout(() => {
       t.deepEqual(instance.state, expected);
       resolve();
