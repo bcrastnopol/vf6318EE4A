@@ -17,6 +17,12 @@ const putRating = (baseApiUrl, rating, book) => {
   );
 };
 
+
+const getPublishers = baseApiUrl => {
+    const url = `${baseApiUrl}/publishers/`;
+    return fetch(url);
+
+};
 // const logIn = (baseApiUrl, username, password) => {
 //   const url = `${baseApiUrl}/users/`;
 //   debugger;
@@ -31,7 +37,7 @@ const putRating = (baseApiUrl, rating, book) => {
 
 export {
   getBooks,
-  getRatings,
   putRating,
+  getPublishers
   // logIn,
 };

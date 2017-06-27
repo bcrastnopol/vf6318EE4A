@@ -1,7 +1,8 @@
 import React from 'react';
 import PropTypes from '../PropTypes';
-import styles from './BookItem.css';
 import RatingForm from  '../Ratings/Ratings';
+import styles from './BookItem.css';
+
 
 const BookItem = props => {
   const {book} = props;

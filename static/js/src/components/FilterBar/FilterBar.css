@@ -2,3 +2,11 @@
     display: inline-block;
     margin-right: 30px;
 }
+
+.nav li.notSelected {
+    font-size: 14px;
+}
+
+.nav li.selected {
+    font-size: 20px;
+}
