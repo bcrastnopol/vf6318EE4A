@@ -5,11 +5,6 @@ const getBooks = baseApiUrl => {
   return fetch(url);
 };
 
-const getRatings = baseApiUrl => {
-  const url = `${baseApiUrl}/ratings/`;
-  return fetch(url);
-};
-
 const putRating = (baseApiUrl, rating, book) => {
   const url = `${baseApiUrl}/ratings/`;
   return fetch(url, {
@@ -21,7 +16,6 @@ const putRating = (baseApiUrl, rating, book) => {
     }
   );
 };
-
 
 // const logIn = (baseApiUrl, username, password) => {
 //   const url = `${baseApiUrl}/users/`;

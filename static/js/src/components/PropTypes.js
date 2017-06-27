@@ -7,7 +7,8 @@ const book = shape({
   description: string.isRequired,
   pk: number.isRequired,
   publisher: number.isRequired,
-  title: string.isRequired
+  title: string.isRequired,
+  average_rating: number.isRequired,
 });
 
 const bookList = arrayOf(book);

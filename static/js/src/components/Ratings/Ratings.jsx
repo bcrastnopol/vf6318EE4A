@@ -9,8 +9,9 @@ class RatingForm extends React.Component {
 
   constructor(props) {
     super(props);
-    this.state = { val: 0 };
+    this.state = { val: 0, msg: '' };
     this.book = props.book;
+    this.rerender = props.rerender;
     this.setRating = this.setRating.bind(this);
   }
 
@@ -21,26 +22,28 @@ class RatingForm extends React.Component {
     // In a bigger app this wouldn't be hardcoded but in the interest of time
     // I'm doing it since it doesn't change
     putRating('api', e.target.value, this.book).then(response => {
-      console.log(response);
+      this.setState({msg: 'thanks for rating!'});
     });
   }
 
   // Simple list of radio buttons
   render() {
-    return (
+    const form = (
       <form onChange={this.setRating}
             id={`rating-form-${this.book.isbn}`}>
         <div className={`${styles.ratings_box}`}>
-          <h4 className={`${styles.h4}`}>Rating</h4>
+          <h4 className={`${styles.h4}`}>Please Rate</h4>
           <ul>
             {[...Array(5)].map((x, i) => {
               return <RatingItem key={i} name={`rating-${this.book.isbn}`}
-                                 val={i}/>
+                                 val={i}/>;
             })}
           </ul>
         </div>
       </form>
-    );
+    ), msg = (<span>{this.state.msg}</span>);
+    if ( this.state.msg ) return msg;
+    return form;
   }
 }
 

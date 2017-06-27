@@ -63,5 +63,8 @@ class RatingViewSet(viewsets.ModelViewSet):
             user = User.objects.first()
 
         book = Book.objects.get(pk=data['book']['pk'])
+
         rating = Rating.objects.get_or_create(rating=data['rating'], user=user, book=book)
+        # save and update average with a signal
+        rating[0].save()
         return Response('success')
