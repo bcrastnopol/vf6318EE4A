@@ -12,10 +12,9 @@ class RatingForm extends React.Component {
     this.state = { val: 0, msg: '' };
     this.book = props.book;
     this.rerender = props.rerender;
+    this.updateBook = props.updateBook;
     this.setRating = this.setRating.bind(this);
   }
-
-
   setRating(e) {
     e.preventDefault();
     this.setState({ val: e.target.value });
@@ -23,6 +22,7 @@ class RatingForm extends React.Component {
     // I'm doing it since it doesn't change
     putRating('api', e.target.value, this.book).then(response => {
       this.setState({msg: 'thanks for rating!'});
+      this.updateBook();
     });
   }
 
