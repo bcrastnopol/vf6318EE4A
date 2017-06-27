@@ -24,11 +24,12 @@ const books = [
 ];
 
 function getWrapper(overrides = {}) {
-  const props = Object.assign({books}, overrides);
+  const props = Object.assign({ books }, overrides);
   return shallow(<BookList {...props} />);
 }
 
 test('should give list the `list` class', t => {
+  debugger;
   const expected = 'list';
   const list = getWrapper().find('ol');
   t.true(list.hasClass(expected));
@@ -45,7 +46,7 @@ test('should pass a book object to each BookItem', t => {
 
   const bookItems = getWrapper().find(BookItem);
   bookItems.forEach((item, i) => {
-    const expected = {'book': books[i]};
+    const expected = { 'book': books[i] };
     t.deepEqual(item.props(), expected);
   });
 });

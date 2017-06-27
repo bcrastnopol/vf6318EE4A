@@ -7,8 +7,8 @@ from django.views import generic
 from rest_framework.response import Response
 
 from rest_framework.permissions import AllowAny
-from rest_framework.authentication import SessionAuthentication, BasicAuthentication
-
+from rest_framework.authentication import SessionAuthentication, \
+    BasicAuthentication
 
 from api.serializers import UserSerializer, BookSerializer, PublisherSerializer, \
     AuthorSerializer, RatingSerializer
@@ -64,7 +64,8 @@ class RatingViewSet(viewsets.ModelViewSet):
 
         book = Book.objects.get(pk=data['book']['pk'])
 
-        rating = Rating.objects.get_or_create(rating=data['rating'], user=user, book=book)
+        rating = Rating.objects.get_or_create(rating=data['rating'], user=user,
+                                              book=book)
         # save and update average with a signal
         rating[0].save()
         return Response('success')

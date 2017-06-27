@@ -57,4 +57,4 @@ class Rating(models.Model):
 signals.pre_save.connect(_calc_rating, sender=Book)
 signals.pre_save.connect(_calc_rating, sender=Rating)
 signals.post_init.connect(_calc_rating, sender=Book)
-
+signals.post_init.connect(_calc_rating, sender=Rating)
